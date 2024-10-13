@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiListViewApp"
+             x:Class="MauiListViewApp.MainPage">
+
+    <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+        <!--ItemSelected="listCities_ItemSelected"-->
+        <!--ItemsSource="{Binding Cities}"-->
+        <ListView x:Name="listCities"
+                  
+                  RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<TextCell Text="{Binding Name}"
+                              Detail="{Binding Age}"
+                              TextColor="Red"
+                              DetailColor="DarkRed">
+                        
+                    </TextCell>-->
+                    <!--<ImageCell ImageSource="{Binding ImageSrc}"
+                               Text="{Binding Name}"
+                               Detail="{Binding Age}"
+                               TextColor="Red"
+                               DetailColor="DarkRed">
+                        
+                    </ImageCell>-->
+                    <!--<ViewCell>
+                        <ViewCell.View>
+                            <HorizontalStackLayout>
+                                <Image Source="{Binding ImageSrc}" HeightRequest="70"/>
+                                <Label Text="{Binding Name}" FontSize="50" Margin="10"/>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding ToCity}" FontSize="28" Margin="5"/>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding Date}" FontSize="20" Margin="5"/>
+                                        <Label Text="{Binding Time}" FontSize="20" Margin="5"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </ViewCell.View>
+                    </ViewCell>-->
+
+                    <local:FlightCell
+                        Name="{Binding Name}"
+                        ToCity="{Binding ToCity}"
+                        Date="{Binding Date}"
+                        Time="{Binding Time}"
+                        Passengers="{Binding Passengers}"
+                        ImageSource="{Binding ImageSrc}">
+                        
+                    </local:FlightCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<HorizontalStackLayout>
+            <Label x:Name="lblSelectedName"
+                   FontSize="30"
+                   Text="{Binding Source={x:Reference listCities}, Path=SelectedItem.Name }"
+                   Margin="10"/>
+            <Label x:Name="lblSelectedToCity"
+                   FontSize="30"
+                   Text="{Binding Source={x:Reference listCities}, Path=SelectedItem.ToCity }"
+                   Margin="10"/>
+            <Label x:Name="lblSelectedDate"
+                   FontSize="30"
+                   Text="{Binding Source={x:Reference listCities}, Path=SelectedItem.Date }"
+                   Margin="10"/>
+            <Label x:Name="lblSelectedTime"
+                   FontSize="30"
+                   Text="{Binding Source={x:Reference listCities}, Path=SelectedItem.Time }"
+                   Margin="10"/>
+        </HorizontalStackLayout>-->
+        
+    </VerticalStackLayout>
+
+</ContentPage>
